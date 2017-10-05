@@ -1,11 +1,4 @@
-FROM ubuntu:16.04
-
-# Install python
-RUN apt-get update \
-  && apt-get install -y python3-pip python3-dev \
-  && cd /usr/local/bin \
-  && ln -s /usr/bin/python3 python \
-  && pip3 install --upgrade pip
+FROM gcr.io/tensorflow/tensorflow:1.3.0-gpu-py3
 
 # Setup ssh server
 RUN apt-get update && apt-get install -y openssh-server
@@ -18,6 +11,10 @@ ADD src /root/src
 
 # SSH login fix. Otherwise user is kicked off after login
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
+# CUDA environment is not passed by default to the SSH session. One has to export it in /etc/profile/ 
+RUN echo "export PATH=$PATH" >> /etc/profile && \
+    echo "ldconfig" >> /etc/profile
 
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
