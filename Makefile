@@ -5,7 +5,7 @@ HOST_PORT=8888
 build:
 	docker build -t $(IMAGE_NAME) .
 
-run: 
+run: build
 	docker run -d -p 8888:22 --name $(APP_NAME) $(IMAGE_NAME) 
 
 test: run
