@@ -5,6 +5,6 @@ import random
 import platform
 
 if __name__ == '__main__':
-	x = random.random()
-	print(platform.python_version())
-	print('yo %0.2f' % x)
+    x = random.random()
+    print(platform.python_version())
+    print('yo %0.2f' % x)
