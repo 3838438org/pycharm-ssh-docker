@@ -11,13 +11,13 @@ BASH_COMMAND = 'nvidia-smi'
 if __name__ == '__main__':
     print(platform.python_version())
 
-    process = subprocess.Popen(BASH_COMMAND, stdout=subprocess.PIPE)
-    output, error = process.communicate()
+    #process = subprocess.Popen(BASH_COMMAND, stdout=subprocess.PIPE)
+    #output, error = process.communicate()
 
-    print(output)
-    print(error)
+    #print(output)
+    #print(error)
 
-    # Tensorflow Test
+    # TensorFlow Test
     ## Creates a graph.
     a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
     b = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[3, 2], name='b')
