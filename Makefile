@@ -6,7 +6,7 @@ build:
 	docker build -t $(IMAGE_NAME) .
 
 run: build
-	docker run -d -p 8888:22 --name $(APP_NAME) $(IMAGE_NAME) 
+	nvidia-docker run -d -p 8888:22 --name $(APP_NAME) $(IMAGE_NAME) 
 
 test: run
 	docker port $(APP_NAME) 22
