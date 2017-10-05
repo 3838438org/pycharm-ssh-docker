@@ -13,3 +13,6 @@ test: run
 
 stop:
 	docker stop $(APP_NAME); docker rm $(APP_NAME)
+
+clean: stop
+	docker rmi $(IMAGE_NAME)
