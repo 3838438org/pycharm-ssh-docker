@@ -4,7 +4,7 @@ This is a test for the dockerfile deployment
 import platform
 import tensorflow as tf
 
-from foo.utils import greet
+from foo.bar import greet
 
 
 if __name__ == '__main__':
