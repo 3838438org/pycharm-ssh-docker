@@ -4,11 +4,13 @@ This is a test for the dockerfile deployment
 import platform
 import tensorflow as tf
 
+from foo.utils import greet
+
 
 if __name__ == '__main__':
     # Check python version
     print(platform.python_version())
-
+    print(greet())
     # TensorFlow Test
     ## Creates a graph.
     a = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], shape=[2, 3], name='a')
