@@ -1,5 +1,5 @@
-IMAGE_NAME=eg_sshd
-APP_NAME=test_sshd
+IMAGE_NAM=tf_sshd
+APP_NAME=app_tf_sshd
 HOST_PORT=8888
 GPUS='4,5'
 
