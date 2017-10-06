@@ -37,3 +37,6 @@ This will build your docker image, mount the `$(pwd)/src` directory to `/root/sr
 * some config setup, so that `Dockerfile`, `Makefile` and shell scripts are sharing stuff (port, user names, passwords, etc.)
 * **You have to ssh in console before running code in PyCharm** to make this work. I don't know why.
 * Maybe have `.pycharm_helpers` copied to the docker container on build?
+
+## Contributing
+Feel free to submit a pull request if you have any ideas to make this setup better :)
