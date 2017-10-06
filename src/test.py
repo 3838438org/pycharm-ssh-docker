@@ -4,8 +4,6 @@ This is a test for the dockerfile deployment
 import platform
 import tensorflow as tf
 
-BASH_COMMAND = 'nvidia-smi'
-
 
 if __name__ == '__main__':
     # Check python version
