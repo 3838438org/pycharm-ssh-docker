@@ -23,7 +23,9 @@ This will build your docker image, mount the `$(pwd)/src` directory to `/root/sr
 
 ### Local
 * sshfs the folder you are working on in the remote server to some your folder. 
-* Open PyCharm and [setup your python interpreter to be the remote interpreter via ssh](https://www.jetbrains.com/help/pycharm/configuring-remote-interpreters-via-ssh.html) using the `root` user and password from the `Dockerfile`. Remember to map the paths!
+* Open PyCharm and [setup your python interpreter to be the remote interpreter via ssh](https://www.jetbrains.com/help/pycharm/configuring-remote-interpreters-via-ssh.html) using the `root` user and password from the `Dockerfile`. 
+    * Remember to map the paths!. 
+    * Do this **AFTER** spinning the container, as PyCharm has to copy the `.pycharm_helpers` to the container to enable debugging. This means that every time you remove the container, you have to reselect the interpreter to copy helper to enable debugging. 
 * Update the credentials in `./bin/mac-connect.sh' 
 * Test the connection by running `./bin/mac-connect.sh`
 * Voila! You can run and debug code in PyCharm.
@@ -31,4 +33,5 @@ This will build your docker image, mount the `$(pwd)/src` directory to `/root/sr
 ## TODO
 * proper secret management. 
 * some config setup, so that `Dockerfile`, `Makefile` and shell scripts are sharing stuff (port, user names, passwords, etc.)
-* *You have to ssh in console before running code in PyCharm* to make this work. I don't know why.
+* **You have to ssh in console before running code in PyCharm** to make this work. I don't know why.
+* Maybe have `.pycharm_helpers` copied to the docker container on build?
