@@ -22,12 +22,14 @@ To run the container type:
 This will build your docker image, mount the `$(pwd)/src` directory to `/root/src` in container and run it.
 
 ### Local
+#### Connection setup
+* Update the credentials in `./bin/mac-connect.sh' 
+* Test the connection by running `./bin/mac-connect.sh`
 * sshfs the folder you are working on in the remote server to some your folder. 
+#### PyCharm setup
 * Open PyCharm and [setup your python interpreter to be the remote interpreter via ssh](https://www.jetbrains.com/help/pycharm/configuring-remote-interpreters-via-ssh.html) using the `root` user and password from the `Dockerfile`. 
     * Remember to map the paths!. 
     * Do this **AFTER** spinning the container, as PyCharm has to copy the `.pycharm_helpers` to the container to enable debugging. This means that every time you remove the container, you have to reselect the interpreter to copy helper to enable debugging. 
-* Update the credentials in `./bin/mac-connect.sh' 
-* Test the connection by running `./bin/mac-connect.sh`
 * Voila! You can run and debug code in PyCharm.
 
 ## TODO
