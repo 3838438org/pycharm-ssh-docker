@@ -1,4 +1,4 @@
-IMAGE_NAM=tf_sshd
+IMAGE_NAME=tf_sshd
 APP_NAME=app_tf_sshd
 HOST_PORT=8888
 GPUS='4,5'
